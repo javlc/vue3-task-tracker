@@ -1,0 +1,40 @@
+{
+  "tasks": [
+    {
+      "text": "Dr. appointment",
+      "day": "Jan 4th 2023, at 2 p.m.",
+      "reminder": false,
+      "id": 1
+    },
+    {
+      "text": "School meeting",
+      "day": "Feb 1st 2023 AT 9 a.m.",
+      "reminder": false,
+      "id": 2
+    },
+    {
+      "text": "Buy groceries",
+      "day": "Dec 30th 2022, at 10 a.m.",
+      "reminder": false,
+      "id": 38377
+    },
+    {
+      "text": "Retrieve the house document",
+      "day": "Jan 5th 2023 at 10 a.m.",
+      "reminder": true,
+      "id": 38378
+    },
+    {
+      "text": "Trabajar con tech",
+      "day": "Tue, Jan 3rd, 2023, all day",
+      "reminder": true,
+      "id": 38379
+    },
+    {
+      "text": "Refresh Vue 3 knowledge for interview",
+      "day": "Aug 23rd 2023, all day ",
+      "reminder": true,
+      "id": 38380
+    }
+  ]
+}
