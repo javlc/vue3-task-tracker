@@ -1,6 +1,7 @@
 {
   "name": "vue-task-tracker",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "Traversy media tutorial (yt: qZXt1Aom3Cs) adapted to use Vite and more tooling",
   "private": true,
   "scripts": {
     "dev": "vite",
