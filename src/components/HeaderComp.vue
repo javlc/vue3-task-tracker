@@ -13,7 +13,10 @@ export default {
       ButtonComp
     },
     props: {
-      title: String,
+      title: {
+        type: String,
+        default: () => '',
+      },
       showAddTask: Boolean
     },
     emits: ['toggle-add-task'],

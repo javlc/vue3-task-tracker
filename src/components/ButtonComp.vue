@@ -9,9 +9,16 @@
 export default {
   name: 'ButtonComp',
   props: {
-    text: String,
-    color: String
+    text: {
+      type: String,
+      default: () => ''
+    },
+    color: {
+      type: String,
+      default: () => ''
+    }
   },
+  emits: ['btn-click'],
   methods: {
     onClick() {
       this.$emit('btn-click')

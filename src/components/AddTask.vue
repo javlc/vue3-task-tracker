@@ -19,6 +19,7 @@
 <script>
 export default {
   name: 'AddTask',
+  emits: ['add-task'],
   data() {
     return {
       text: '',
