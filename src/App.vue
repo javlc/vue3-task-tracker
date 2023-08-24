@@ -1,19 +1,23 @@
 <template>
   <div class="container">
-    <Header @toggle-add-task="toggleAddTask" title="Task Tracker" :showAddTask="showAddTask" />
-    <router-view :showAddTask="showAddTask"></router-view>
-    <Footer />
+    <HeaderComp 
+    title="Task Tracker" 
+    :show-add-task="showAddTask" 
+    @toggle-add-task="toggleAddTask" 
+    />
+    <router-view :show-add-task="showAddTask"></router-view>
+    <FooterComp />
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
+import HeaderComp from './components/HeaderComp.vue'
+import FooterComp from './components/FooterComp.vue'
 export default {
   name: 'App',
   components: {
-    Header,
-    Footer,
+    HeaderComp,
+    FooterComp,
   },
   data() {
     return {

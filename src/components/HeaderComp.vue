@@ -1,21 +1,22 @@
 <template>
   <header>
     <h1>{{ title }}</h1>
-    <Button v-show="isHomePage" @btn-click="$emit('toggle-add-task')" :text="showAddTask ? 'Close' : 'Add Task'" :color="showAddTask ? 'red' : 'green'" />
+    <ButtonComp v-show="isHomePage" :text="showAddTask ? 'Close' : 'Add Task'" :color="showAddTask ? 'red' : 'green'" @btn-click="$emit('toggle-add-task')" />
   </header>
 </template>
 
 <script>
-import Button from './Button.vue';
+import ButtonComp from './ButtonComp.vue';
 export default {
-    name: 'Header',
+    name: 'HeaderComp',
+    components: {
+      ButtonComp
+    },
     props: {
       title: String,
       showAddTask: Boolean
     },
-    components: {
-      Button
-    },
+    emits: ['toggle-add-task'],
     computed: {
       isHomePage() {
         if (this.$route.path === '/') {

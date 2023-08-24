@@ -1,28 +1,35 @@
 <template>
   <div class="home">
     <AddTask v-show="showAddTask" @add-task="addTask"/>
-    <Tasks @toggle-reminder="toggleReminder" @delete-task="deleteTask" :tasks="tasks"/>
+    <Tasks 
+    :tasks="tasks"
+    @toggle-reminder="toggleReminder" 
+    @delete-task="deleteTask" 
+    />
 
   </div>
 </template>
 
 <script>
 import AddTask from '../components/AddTask.vue';
-import Tasks from '../components/Tasks.vue';
+import TasksComp from '../components/TasksComp.vue';
 
 export default {
-  name: 'Home',
+  name: 'HomeView',
+  components: {
+    Tasks: TasksComp,
+    AddTask
+  },
   props: {
     showAddTask: Boolean
-  },
-  components: {
-    Tasks,
-    AddTask
   },
   data() {
     return {
       tasks: [],
     }
+  },
+  async created() {
+    this.tasks = await this.fetchTasks();
   },
   methods: {
     async addTask(task) {
@@ -74,9 +81,6 @@ export default {
 
       return data;
     }
-  },
-  async created() {
-    this.tasks = await this.fetchTasks();
   }
 }
 </script>
