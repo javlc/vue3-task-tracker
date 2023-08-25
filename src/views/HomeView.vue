@@ -5,11 +5,13 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import AddTask from '../components/AddTask.vue'
 import TasksComp from '../components/TasksComp.vue'
+import type { Task } from '@/types/TaskTrackerTypes'
 
-export default {
+export default defineComponent({
   name: 'HomeView',
   components: {
     Tasks: TasksComp,
@@ -20,14 +22,14 @@ export default {
   },
   data() {
     return {
-      tasks: [],
+      tasks: [] as Task[],
     }
   },
   async created() {
     this.tasks = await this.fetchTasks()
   },
   methods: {
-    async addTask(task) {
+    async addTask(task: Task) {
       const res = await fetch('api/tasks', {
         method: 'POST',
         headers: {
@@ -40,7 +42,7 @@ export default {
 
       this.tasks = [...this.tasks, data]
     },
-    async deleteTask(id) {
+    async deleteTask(id: number) {
       if (confirm('Are you sure?')) {
         const res = await fetch(`api/tasks/${id}`, {
           method: 'DELETE',
@@ -51,7 +53,7 @@ export default {
           : alert('Error deleting task')
       }
     },
-    async toggleReminder(id) {
+    async toggleReminder(id: number) {
       const taskToToggle = await this.fetchTask(id)
       const updTask = await {
         ...taskToToggle,
@@ -76,12 +78,12 @@ export default {
 
       return data
     },
-    async fetchTask(id) {
+    async fetchTask(id: number) {
       const res = await fetch(`api/tasks/${id}`)
       const data = await res.json()
 
       return data
     },
   },
-}
+})
 </script>
