@@ -16,8 +16,9 @@
   </form>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+export default defineComponent({
   name: 'AddTask',
   emits: ['add-task'],
   data() {
@@ -28,7 +29,7 @@ export default {
     }
   },
   methods: {
-    onSubmit(e) {
+    onSubmit(e: Event) {
       e.preventDefault()
 
       if (!this.text) {
@@ -48,7 +49,7 @@ export default {
       ;(this.day = ''), (this.reminder = false)
     },
   },
-}
+})
 </script>
 
 <style scoped>

@@ -10,9 +10,10 @@
     <p>{{ task.day }}</p>
   </div>
 </template>
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import XmarkIcon from './icons/XmarkIcon.vue'
-export default {
+export default defineComponent({
   name: 'TaskComp',
   components: {
     XmarkIcon,
@@ -24,7 +25,7 @@ export default {
     },
   },
   emits: ['toggle-reminder', 'delete-task'],
-}
+})
 </script>
 <style scoped>
 .task {

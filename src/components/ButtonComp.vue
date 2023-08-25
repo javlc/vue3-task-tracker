@@ -3,16 +3,18 @@
     {{ text }}
   </button>
 </template>
-<script>
-export default {
+<script lang="ts">
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+export default defineComponent({
   name: 'ButtonComp',
   props: {
     text: {
-      type: String,
+      type: String as PropType<string>,
       default: () => '',
     },
     color: {
-      type: String,
+      type: String as PropType<string>,
       default: () => '',
     },
   },
@@ -22,5 +24,5 @@ export default {
       this.$emit('btn-click')
     },
   },
-}
+})
 </script>

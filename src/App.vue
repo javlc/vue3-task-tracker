@@ -10,10 +10,11 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import HeaderComp from '@/components/HeaderComp.vue'
 import FooterComp from '@/components/FooterComp.vue'
-export default {
+export default defineComponent({
   name: 'App',
   components: {
     HeaderComp,
@@ -29,7 +30,7 @@ export default {
       this.showAddTask = !this.showAddTask
     },
   },
-}
+})
 </script>
 
 <style>

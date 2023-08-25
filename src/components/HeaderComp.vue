@@ -10,9 +10,10 @@
   </header>
 </template>
 
-<script>
+<script lang="ts">
+import { defineComponent } from 'vue'
 import ButtonComp from './ButtonComp.vue'
-export default {
+export default defineComponent({
   name: 'HeaderComp',
   components: {
     ButtonComp,
@@ -34,7 +35,7 @@ export default {
       }
     },
   },
-}
+})
 </script>
 
 <style scoped>

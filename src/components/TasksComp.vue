@@ -7,7 +7,7 @@
     />
   </div>
 </template>
-<script>
+<script lang="ts">
 import TaskComp from './TaskComp.vue'
 export default {
   name: 'TasksComp',
@@ -16,7 +16,7 @@ export default {
   },
   props: {
     tasks: {
-      type: Array,
+      type: Array<{ [key: string]: any }>,
       default: () => [],
     },
   },
