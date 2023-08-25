@@ -1,6 +1,10 @@
 <template>
-  <div :class="[task.reminder ? 'reminder' : '', 'task']" @dblclick="$emit('toggle-reminder', task.id)">
-    <h3>{{ task.text }}
+  <div
+    :class="[task.reminder ? 'reminder' : '', 'task']"
+    @dblclick="$emit('toggle-reminder', task.id)"
+  >
+    <h3>
+      {{ task.text }}
       <XmarkIcon @click="$emit('delete-task', task.id)" />
     </h3>
     <p>{{ task.day }}</p>
@@ -11,16 +15,16 @@ import XmarkIcon from './icons/XmarkIcon.vue';
 export default {
   name: 'TaskComp',
   components: {
-    XmarkIcon
+    XmarkIcon,
   },
   props: {
     task: {
       type: Object,
-      default: () => {}
-    }
+      default: () => {},
+    },
   },
   emits: ['toggle-reminder', 'delete-task'],
-}
+};
 </script>
 <style scoped>
 .task {

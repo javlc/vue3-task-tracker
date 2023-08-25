@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <HeaderComp 
-    title="Task Tracker" 
-    :show-add-task="showAddTask" 
-    @toggle-add-task="toggleAddTask" 
+    <HeaderComp
+      title="Task Tracker"
+      :show-add-task="showAddTask"
+      @toggle-add-task="toggleAddTask"
     />
     <router-view :show-add-task="showAddTask"></router-view>
     <FooterComp />
@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import HeaderComp from './components/HeaderComp.vue'
-import FooterComp from './components/FooterComp.vue'
+import HeaderComp from './components/HeaderComp.vue';
+import FooterComp from './components/FooterComp.vue';
 export default {
   name: 'App',
   components: {
@@ -21,15 +21,15 @@ export default {
   },
   data() {
     return {
-      showAddTask: false
-    }
+      showAddTask: false,
+    };
   },
   methods: {
     toggleAddTask() {
       this.showAddTask = !this.showAddTask;
     },
-  }
-}
+  },
+};
 </script>
 
 <style>
