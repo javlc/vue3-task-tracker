@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import ButtonComp from './ButtonComp.vue';
+import ButtonComp from './ButtonComp.vue'
 export default {
   name: 'HeaderComp',
   components: {
@@ -28,13 +28,13 @@ export default {
   computed: {
     isHomePage() {
       if (this.$route.path === '/') {
-        return true;
+        return true
       } else {
-        return false;
+        return false
       }
     },
   },
-};
+}
 </script>
 
 <style scoped>

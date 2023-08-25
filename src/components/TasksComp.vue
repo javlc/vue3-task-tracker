@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import TaskComp from './TaskComp.vue';
+import TaskComp from './TaskComp.vue'
 export default {
   name: 'TasksComp',
   components: {
@@ -21,5 +21,5 @@ export default {
     },
   },
   emits: ['delete-task', 'toggle-reminder'],
-};
+}
 </script>

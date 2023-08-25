@@ -19,8 +19,8 @@ export default {
   emits: ['btn-click'],
   methods: {
     onClick() {
-      this.$emit('btn-click');
+      this.$emit('btn-click')
     },
   },
-};
+}
 </script>

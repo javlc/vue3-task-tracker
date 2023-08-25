@@ -11,7 +11,7 @@
   </div>
 </template>
 <script>
-import XmarkIcon from './icons/XmarkIcon.vue';
+import XmarkIcon from './icons/XmarkIcon.vue'
 export default {
   name: 'TaskComp',
   components: {
@@ -24,7 +24,7 @@ export default {
     },
   },
   emits: ['toggle-reminder', 'delete-task'],
-};
+}
 </script>
 <style scoped>
 .task {
